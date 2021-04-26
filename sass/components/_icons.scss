@@ -1,0 +1,20 @@
+.icon-mail {
+  width: 16px;
+  height: 12px;
+}
+.icon-smartphone {
+  width: 10px;
+  height: 16px;
+}
+.send-icon {
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+@each $features in attention, punctual, plan, tecnology {
+  .#{$features}::before {
+    background-image: url(../images/features/#{$features}-image.png);
+  }
+}

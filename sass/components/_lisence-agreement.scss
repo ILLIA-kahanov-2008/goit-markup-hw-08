@@ -1,0 +1,45 @@
+.lisence-agreement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.lisence-agreement__checkbox-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden;
+
+  &:checked ~ .lisence-agreement__checkbox {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color);
+    background-origin: border-box;
+  }
+}
+.lisence-agreement__checkbox {
+  position: relative;
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  border: 2px solid var(--title-color);
+  border-radius: 4px;
+  margin-right: 9px;
+}
+.lisence-agreement__icon {
+  position: absolute;
+  display: inline-block;
+  top: -2px;
+  left: -2px;
+  width: 16px;
+  height: 15px;
+  fill: transparent;
+
+  .lisence-agreement__checkbox-hidden:checked ~ .lisence-agreement__checkbox & {
+    fill: var(--white-color);
+    stroke: var(--white-color);
+  }
+}

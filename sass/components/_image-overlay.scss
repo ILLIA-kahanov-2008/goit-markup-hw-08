@@ -1,0 +1,25 @@
+.image-overlay {
+  position: absolute;
+  opacity: 0;
+  height: 294px; 
+  display: flex;
+  align-items: center;
+  padding-left: 24px;
+  padding-right: 24px;
+  background-color: rgba(33, 150, 243, 0.9);
+  transition: transform var(--animation), opacity var(--animation);
+
+  .portfolio__link:hover &,
+  .portfolio__link:focus & {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+}
+
+.image-overlay__content {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03em;
+  color: var(--white-color);
+}
