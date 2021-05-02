@@ -1,8 +1,10 @@
 .features__item {
-  &:not(:last-child) {
-    margin-bottom: 30px;
-  }
-
+  --number-of-items: 4;
+  flex-basis: calc(
+    (100% - (30px * var(--number-of-items))) / var(--number-of-items)
+  );
+  margin-left: 30px;
+  
   &::before {
     display: block;
     margin-bottom: 30px;
@@ -12,21 +14,6 @@
     background-repeat: no-repeat;
     background-position: center;
   }
-@media screen and (min-width: 768px) {
-  --number-of-items: 2;
-  flex-basis: calc(
-    (100% - (30px * var(--number-of-items))) / var(--number-of-items)
-  );
-  margin-left: 30px;
-  margin-bottom: 0;
-  }
- @media screen and (min-width: 1200px) {
-  --number-of-items: 4;
-  flex-basis: calc(
-    (100% - (30px * var(--number-of-items))) / var(--number-of-items)
-  );
-}
- 
 }
 .features__item-title {
   margin-bottom: 10px;

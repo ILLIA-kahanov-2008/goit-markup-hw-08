@@ -5,24 +5,14 @@
 .logo__text {
   font-family: var(--logo-font);
   font-weight: 700;
+  font-size: 24px;
+  line-height: 1.167;
+
+   @media screen and (min-width:1200px) {
   font-size: 26px;
   line-height: 1.19;
+   }
 }
-// position: absolute;
-// width: 134px;
-// height: 28px;
-// left: 15px;
-// top: 16px;
-
-// font-family: Raleway;
-// font-style: normal;
-// font-weight: bold;
-// font-size: 24px;
-// line-height: 28px;
-// letter-spacing: 0.03em;
-
-// color: #2196F3;
-
 .logo__text--black {
   color: var(--black-color);
 }
