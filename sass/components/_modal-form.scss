@@ -1,3 +1,7 @@
+// .order-form {
+// text-align: center;
+// }
+
 .order-form__item {
   position: relative;
 }
@@ -37,12 +41,12 @@
   padding: 11px 15px;
   margin-bottom: 20px;
   resize: none;
+
+  @media screen and (max-width: 1199.98px) {
+    height: 120px;
+  }
 }
-// @media screen and (max-width: 1199.98px) {
-//   .order-form__message {
-//     [rows]: 6;
-//   }
-// }
+
 .order-form__item-icon {
   position: absolute;
   bottom: 21px;
@@ -57,7 +61,6 @@
   }
 }
 .order-form__button {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin: 0 auto;
 }

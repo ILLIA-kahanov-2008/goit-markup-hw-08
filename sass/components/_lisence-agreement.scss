@@ -22,6 +22,7 @@
 }
 .lisence-agreement__checkbox {
   position: relative;
+  cursor: pointer;
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -33,10 +34,14 @@
   position: absolute;
   display: inline-block;
   top: -2px;
-  left: -2px;
+  left: -4px;
   width: 16px;
   height: 15px;
   fill: transparent;
+
+  @media screen and (min-width: 480px) {
+    left: -2px;
+  }
 
   .lisence-agreement__checkbox-hidden:checked ~ .lisence-agreement__checkbox & {
     fill: var(--white-color);
@@ -46,8 +51,10 @@
 .checkbox__link {
   color: var(--accent-color);
 }
+.lisence-agreement__label {
+  cursor: pointer;
 @media screen and (max-width: 1199.98px) {
-  .lisence-agreement__label {
+  
     font-size: 12px;
     line-height: 1.167;
   }

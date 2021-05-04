@@ -1,18 +1,14 @@
 .container {
   // background-color: lightblue;
-  width: 100%;
-  // min-width: 320px;
-  // overflow-x: scroll;
+  width: 100%;  
+min-width: 320px; 
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
  
-  //  @media screen and (max-width:320px)  {
-  //   min-width: 320px;
-  // }
-
   @media screen and (min-width:480px)  {
+    
     max-width: 480px;
   }
 

@@ -1,12 +1,20 @@
-.header {
-  // position: fixed;
-  border-bottom: 1px solid #ececec;
+.header {  
+  
+  border-bottom: 1px solid #ececec;  
 }
 .header__container {
   // background-color: grey;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+
+  // @media screen and (max-width: 767.98px) {
+  // position: fixed;
+  // left: 50%;
+  // transform: translateX(-50%);
+  // // margin-bottom: 80px;
+  // }
 }
 .header__logo {
   padding-top: 16px;

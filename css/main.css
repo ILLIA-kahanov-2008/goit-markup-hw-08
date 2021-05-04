@@ -352,12 +352,14 @@ html {
 }
 
 body {
+  width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   line-height: 1.714;
   letter-spacing: 0.03em;
   color: var(--main-text-color);
   background-color: var(--white-color);
+  min-width: 320px;
 }
 
 h1,
@@ -417,6 +419,7 @@ button {
 
 .container {
   width: 100%;
+  min-width: 320px;
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
@@ -747,6 +750,8 @@ button {
 
 .mobile-menu {
   z-index: 2;
+  width: 100%;
+  min-width: 320px;
 }
 @media screen and (max-width: 767.98px) {
   .mobile-menu {
@@ -776,7 +781,7 @@ button {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  z-index: 100;
+  z-index: 3;
 }
 @media screen and (min-width: 768px) {
   .mobile-menu__button {
@@ -896,6 +901,7 @@ button {
 }
 
 .backdrop {
+  z-index: 4;
   position: fixed;
   opacity: 1;
   top: 0;
@@ -918,12 +924,20 @@ button {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 40px;
+  padding: 25px 15px;
   background-color: var(--white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  width: 450px;
+  min-width: 290px;
+  width: calc(100vw - 30px);
   height: 609px;
+}
+@media screen and (min-width: 480px) {
+  .modal {
+    width: 450px;
+    height: 609px;
+    padding: 40px;
+  }
 }
 @media screen and (min-width: 1200px) {
   .modal {
@@ -1017,6 +1031,11 @@ button {
   margin-bottom: 20px;
   resize: none;
 }
+@media screen and (max-width: 1199.98px) {
+  .order-form__message {
+    height: 120px;
+  }
+}
 
 .order-form__item-icon {
   position: absolute;
@@ -1032,9 +1051,8 @@ button {
 }
 
 .order-form__button {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  margin: 0 auto;
 }
 
 .lisence-agreement {
@@ -1062,6 +1080,7 @@ button {
 
 .lisence-agreement__checkbox {
   position: relative;
+  cursor: pointer;
   display: inline-block;
   width: 16px;
   height: 15px;
@@ -1074,10 +1093,15 @@ button {
   position: absolute;
   display: inline-block;
   top: -2px;
-  left: -2px;
+  left: -4px;
   width: 16px;
   height: 15px;
   fill: transparent;
+}
+@media screen and (min-width: 480px) {
+  .lisence-agreement__icon {
+    left: -2px;
+  }
 }
 .lisence-agreement__checkbox-hidden:checked ~ .lisence-agreement__checkbox .lisence-agreement__icon {
   fill: var(--white-color);
@@ -1088,12 +1112,16 @@ button {
   color: var(--accent-color);
 }
 
+.lisence-agreement__label {
+  cursor: pointer;
+}
 @media screen and (max-width: 1199.98px) {
   .lisence-agreement__label {
     font-size: 12px;
     line-height: 1.167;
   }
 }
+
 @media screen and (min-width: 1200px) {
   .subscription {
     display: inline-flex;
@@ -1176,9 +1204,10 @@ button {
 }
 
 .image-overlay {
+  z-index: -1;
   position: absolute;
   opacity: 0;
-  height: 294px;
+  height: 188px;
   display: flex;
   align-items: center;
   padding-left: 24px;
@@ -1187,16 +1216,29 @@ button {
   transition: transform var(--animation), opacity var(--animation);
 }
 .portfolio__link:hover .image-overlay, .portfolio__link:focus .image-overlay {
+  z-index: 1;
   transform: translateY(-100%);
   opacity: 1;
+}
+@media screen and (min-width: 480px) {
+  .image-overlay {
+    height: 294px;
+  }
 }
 
 .image-overlay__content {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 1.556;
+  font-size: 14px;
+  line-height: 1.143;
   letter-spacing: 0.03em;
   color: var(--white-color);
+}
+@media screen and (min-width: 480px) {
+  .image-overlay__content {
+    font-size: 18px;
+    line-height: 1.556;
+    letter-spacing: 0.03em;
+  }
 }
 
 .header {
@@ -1207,6 +1249,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .header__logo {
@@ -1465,8 +1508,8 @@ button {
 
 .portfolio__item {
   position: relative;
-  overflow: hidden;
   margin-bottom: 30px;
+  border: 1px solid #eeeeee;
 }
 @media screen and (min-width: 768px) {
   .portfolio__item {
@@ -1479,21 +1522,19 @@ button {
 @media screen and (min-width: 1200px) {
   .portfolio__item {
     --number-of-items: 3;
-    flex-basis: calc( (100% - (30px * var(--number-of-items))) / var(--number-of-items) );
   }
 }
 
 .portfolio__link {
   display: block;
+  height: 100%;
   text-decoration: none;
-  border: 1px solid #eeeeee;
   color: var(--main-text-color);
   background-color: var(--white-color);
   transition: box-shadow var(--animation);
+  overflow: hidden;
 }
-
-.portfolio__link:hover,
-.portfolio__link:focus {
+.portfolio__link:hover, .portfolio__link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
