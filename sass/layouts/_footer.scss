@@ -3,8 +3,7 @@
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.footer__container {
-  background-color: lightgreen;
+.footer__container {  
   text-align: center;
 
   @media screen and (min-width: 768px) {
@@ -22,15 +21,14 @@
 .footer__logo {
   margin-bottom: 20px;
 }
-.footer__item {
-  background-color: grey;
+.footer__item {  
 
   @media screen and (min-width: 768px) {
-    flex-basis: calc((100% - 60px) / 2);
+    flex-basis: calc((100% - (30px * var(--number-of-items))) / var(--number-of-items));
   }
 
   @media screen and (min-width: 1200px) {
-    flex-basis: calc((50% - 45px) / 2);
+    flex-basis: calc((50% - 45px) / var(--number-of-items));
   }
 }
 .footer__item-social {

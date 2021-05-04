@@ -1,11 +1,21 @@
-.clients {
-  padding-bottom: 94px;
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
 }
 .clients__item {
-  width: calc(
-    (100% - (30px * var(--number-of-items) * 2)) / (var(--number-of-items) * 2)
-  );
-  margin-left: 30px;
+  margin-top: 30px;
+    margin-left: 30px;
+    flex-basis: calc(
+      (100% - (30px * var(--number-of-items))) / var(--number-of-items)
+    );
+@media screen and (min-width: 768px) {
+  --number-of-items: 3;
+}
+@media screen and (min-width: 1200px) {
+  --number-of-items: 6;
+}
 }
 .clients__link {
   display: flex;

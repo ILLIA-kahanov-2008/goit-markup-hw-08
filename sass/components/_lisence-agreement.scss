@@ -27,7 +27,7 @@
   height: 15px;
   border: 2px solid var(--title-color);
   border-radius: 4px;
-  margin-right: 9px;
+  margin-right: 8px;
 }
 .lisence-agreement__icon {
   position: absolute;
@@ -41,5 +41,14 @@
   .lisence-agreement__checkbox-hidden:checked ~ .lisence-agreement__checkbox & {
     fill: var(--white-color);
     stroke: var(--white-color);
+  }
+}
+.checkbox__link {
+  color: var(--accent-color);
+}
+@media screen and (max-width: 1199.98px) {
+  .lisence-agreement__label {
+    font-size: 12px;
+    line-height: 1.167;
   }
 }

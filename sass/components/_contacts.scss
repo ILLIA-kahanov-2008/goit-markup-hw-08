@@ -5,9 +5,9 @@
   }
 
   @media screen and (min-width: 768px) {
-    display: inline-flex;
+    display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    // align-items: center;
     padding-top: 21px;
     padding-bottom: 20px;
   }
@@ -19,18 +19,15 @@
 }
 
 .contacts__item {
-
-  @media screen and (min-width: 768px) {
     line-height: 14px;
-  }
 
   @media screen and (min-width: 1200px) {
-    line-height: 16px;
+    line-height: 17px;
   }
 }
 .contacts__item:not(:last-child) {
   @media screen and (min-width: 768px) and (max-width: 1199.98px) {
-    margin-bottom: 10px;
+    margin-bottom: 9px;
   }
 
   @media screen and (min-width: 1200px) {
