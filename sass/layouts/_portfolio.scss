@@ -1,7 +1,7 @@
 
 .portfolio__item {  
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
     
@@ -25,7 +25,7 @@
   color: var(--main-text-color);
   background-color: var(--white-color);
   transition: box-shadow var(--animation);
- overflow: hidden;
+//  overflow: hidden;
 
   &:hover,
   &:focus {
